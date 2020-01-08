@@ -2,7 +2,7 @@
 
 ESX_VEHICLE_INVENTORY
 
-This code is not mine, I just changed it to the new esx weight update.
+This code is not mine, I just changed it to work with the new esx weight update.
 
 The original code is from ddh3: https://github.com/ESX-PUBLIC/esx_vehicle_inventory
 
