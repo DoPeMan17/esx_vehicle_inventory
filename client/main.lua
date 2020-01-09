@@ -190,7 +190,7 @@ AddEventHandler('esx_truck_inventory:getInventoryLoaded', function(inventory,wei
 				      count     = PlayerData.accounts[i].money,
 				      value     = PlayerData.accounts[i].name,
 				      name      = PlayerData.accounts[i].label,
-					  weight     = PlayerData.accounts[i].weight,
+					  limit     = PlayerData.accounts[i].limit,
 					  type		= 'item_account',
 				    })
 				  -- end
@@ -204,7 +204,7 @@ AddEventHandler('esx_truck_inventory:getInventoryLoaded', function(inventory,wei
 				      count     = PlayerData.inventory[i].count,
 				      value     = PlayerData.inventory[i].name,
 				      name      = PlayerData.inventory[i].label,
-					  weight     = PlayerData.inventory[i].weight,
+					  limit     = PlayerData.inventory[i].limit,
 					  type		= 'item_standard',
 				    })
 				end
@@ -341,10 +341,10 @@ AddEventHandler('esx_truck_inventory:getInventoryLoaded', function(inventory,wei
           for i=1, #PlayerData.inventory, 1 do
 
             if PlayerData.inventory[i].name == data.current.value then
-              if tonumber(PlayerData.inventory[i].weight) < tonumber(PlayerData.inventory[i].count) + quantity and PlayerData.inventory[i].weight ~= -1 then
-                max = true
-              else
+              if tonumber(PlayerData.inventory[i].weight) < tonumber(PlayerData.inventory[i].count) + quantity and PlayerData.inventory[i].limit ~= -1 then
                 max = false
+              else
+                max = true
               end
             end
           end
